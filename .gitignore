@@ -1,0 +1,14 @@
+#ignore the results files
+1-ReadData/dataset/*
+2-Imputation/dataset/*
+3-Normalization/dataset/*
+4-Clustering/dataset/*
+5-PathwayActivaty/dataset/*
+5-PathwayActivaty/TCGA/*
+6-PathwayHeterogenity/dataset/*
+7-MetabolicPhenotype/dataset/*
+
+Data/TCGA/HNSC/exp.txt
+Data/TCGA/HNSC/type.txt
+
+pipeline.ai

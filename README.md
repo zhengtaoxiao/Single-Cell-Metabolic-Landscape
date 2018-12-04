@@ -4,9 +4,9 @@ Introduction
 ------------
 This pipeline is responsible for analyzing metabolic gene profile using single-cell RNA sequencing data. 
 
-![Schematic representationof single-cell RNA-seq data analysis](pipeline.png)
+![pipeline](pipeline.png "Schematic representationof single-cell RNA-seq data analysis")
 
-There are 7 main steps involved in data processing and analyzing which organized in 7 different folders.
+There are 7 main steps involved in data processing and analysis which organized in 7 different folders.
 
 Requirements
 ------------
@@ -54,6 +54,7 @@ Rscript metabolic_landscape.R melanoma
 Rscript metabolic_landscape.R head_neck
 Rscript inter_tumor_distance.R melanoma
 Rscript inter_tumor_distance.R head_neck
+cd ../
 ```
 The t-SNE algorithm will be performed in this step for visualizing metabolic gene expression in millions of cells. The spearman correlation matrix will aslo be generated to show the inter-tumor heterogeneity using metabolic genes.
 
@@ -64,8 +65,11 @@ cd 5-PathwayActivity
 Rscript scRNA_pathway_activity.R melanoma
 Rscript scRNA_pathway_activity.R head_neck
 Rscript TCGA_pathway_activity.R
+cd ..
 ```
 This step will generate the metabolic pathway activity for each cell type using the single-cell RNA sequencing data and bulk-RNA sequencing data. The distribution of the pathway activities in each cell type will be shown as violin plots. The correlation of pathway activities at single-cell resolution and bulk-cell resolution will be shown in scatter plot.
+
+*The bulk RNA-seq data was downloaded from TCGA website, pls see the instruction for data downloading and preprocessing in Data/TCGA/README.md* 
 
 Metabolic pathway heterogeneity
 -------------------------------
@@ -75,6 +79,7 @@ Rscript intra_malignant_variance_PCA.R melanoma
 Rscript intra_malignant_variance_PCA.R head_neck
 Rscript intra_non-malignant_variance_PCA.R melanoma
 Rscript intra_non-malignant_variance_PCA.R head_neck
+cd ..
 ```
 In this step, the PCA and GSEA analysis will be performed to investigate the pathway heterogeneity across cells in each tumor or cell type. 
 
@@ -83,6 +88,7 @@ Metabolic phenotype for cell subtypes
 cd 7-MetabolicPhenotype
 Rscript non-malignant_subtype.R melanoma
 Rscript non-malignant_subtype.R head_neck
+cd ..
 ```
 The metabolic gene expression will be compared across T-cell subtypes and fibroblast subtypes using the GSEA analysis. 
 

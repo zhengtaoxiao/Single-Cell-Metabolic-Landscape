@@ -1,8 +1,8 @@
-Exploring metabolic heterogeneity at single-cell resolution
+Metabolic landscape of single cells in tumor microenvironment
 ==========
 Introduction
 ------------
-This pipeline is responsible for analyzing metabolic gene profile using single-cell RNA sequencing data. 
+This pipeline is responsible for analyzing metabolic gene expression profile using single-cell RNA sequencing data. 
 
 ![pipeline](pipeline.png "Schematic representationof single-cell RNA-seq data analysis")
 
@@ -10,10 +10,12 @@ There are 7 main steps involved in data processing and analysis which organized 
 
 Requirements
 ------------
+The required R packages can be installed using below command:
+
 ``` bash
 Rscript install_requiredPackages.R 
 ```
-Download and read the dataset
+Download and read the datasets
 -----------------------------
 ``` bash
 cd "1-ReadData"
@@ -22,7 +24,7 @@ Rscript readData_head_neck.R
 Rscript readData_melanoma.R
 cd ../
 ```
-The gene expression data and the annotation of clel type would be stored as the R objects.
+The gene expression data and the annotation of cell type would be stored as the R objects.
 
 Imputation of the missig values
 -------------------------------
@@ -44,7 +46,7 @@ Rscript normalization.R melanoma
 Rscript normalization.R head_neck
 cd ../
 ```
-The normalization of gene expression in different cell types will be done by four different methods. The distribution of mean gene ratio for each method will be generated for evaluation and selection of best normalization method.
+The normalization of gene expression in different cell types will be done by four different methods. The distribution of relative gene expression for each cell type will be generated for evaluation and selection of best normalization method.
 
 Landscape of the metabolic gene expression profile
 --------------------------------------------------
@@ -83,7 +85,8 @@ cd ..
 ```
 In this step, the PCA and GSEA analysis will be performed to investigate the pathway heterogeneity across cells in each tumor or cell type. 
 
-Metabolic phenotype for cell subtypes
+Metabolic features of cell subtypes
+-----------------------------------
 ``` bash
 cd 7-MetabolicPhenotype
 Rscript non-malignant_subtype.R melanoma

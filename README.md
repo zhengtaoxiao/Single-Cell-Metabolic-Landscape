@@ -69,7 +69,7 @@ cd ..
 ```
 This step will generate the metabolic pathway activity for each cell type using the single-cell RNA sequencing data and bulk-RNA sequencing data. The distribution of the pathway activities in each cell type will be shown as violin plots. The correlation of pathway activities at single-cell resolution and bulk-cell resolution will be shown in scatter plot.
 
-*The bulk RNA-seq data was downloaded from TCGA website, pls see the instruction for data downloading and preprocessing in Data/TCGA/README.md* 
+*The bulk RNA-seq data was downloaded from TCGA website, please see the instruction for data downloading and preprocessing in Data/TCGA/README.md* 
 
 Metabolic pathway heterogeneity
 -------------------------------

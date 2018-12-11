@@ -15,7 +15,7 @@ pathway_file <- "../Data/KEGG_metabolism.gmt"
 
 #1. Loading the data
 selected_sce <- readRDS(file.path("../1-ReadData/dataset/",tumor,"selected_sce.rds"))
-selected_nontumor_sce <- selected_sce[,selected_sce$cellType!="malignant"]
+selected_nontumor_sce <- selected_sce[,selected_sce$cellType!="Malignant"]
 selected_nontumor_metabolic_sce <- selected_nontumor_sce[rowData(selected_nontumor_sce)$metabolic,]
 #=========================================================================
 celltypes <- unique(selected_nontumor_metabolic_sce$cellType)
@@ -122,4 +122,4 @@ unlink("preRankResults",recursive=T)
 unlink("prerank.rnk")
 date_string <- Sys.Date()
 date_split <- strsplit(as.character(date_string),"-")[[1]]
-unlink(paste0(tolower(month.abb[as.numeric(date_split[2])]),date_split[3]))
+unlink(paste0(tolower(month.abb[as.numeric(date_split[2])]),date_split[3]),recursive=T)

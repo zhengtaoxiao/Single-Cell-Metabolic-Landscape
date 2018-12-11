@@ -123,4 +123,4 @@ unlink("preRankResults",recursive=T)
 unlink("prerank.rnk")
 date_string <- Sys.Date()
 date_split <- strsplit(as.character(date_string),"-")[[1]]
-unlink(paste0(tolower(month.abb[as.numeric(date_split[2])]),date_split[3]))
+unlink(paste0(tolower(month.abb[as.numeric(date_split[2])]),date_split[3]),recursive=T)

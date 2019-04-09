@@ -10,7 +10,7 @@ options(stringsAsFactors=FALSE)
 args <- commandArgs()
 tumor <- args[6]
 
-outDir <- file.path(dataset,tumor)
+outDir <- file.path("dataset",tumor)
 if(!dir.exists(outDir)) dir.create(outDir,recursive=TRUE)
 
 #1. Loading the data

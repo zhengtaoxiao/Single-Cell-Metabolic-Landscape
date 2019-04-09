@@ -6,6 +6,19 @@ gmtPathways <- function(gmt.file) {
     pathways
 }
 
+## get_os is copied from https://github.com/r-lib/rappdirs/blob/master/R/utils.r#L1
+get_os <- function() {
+  if (.Platform$OS.type == "windows") { 
+    "win"
+  } else if (Sys.info()["sysname"] == "Darwin") {
+    "mac" 
+  } else if (.Platform$OS.type == "unix") { 
+    "unix"
+  } else {
+    stop("Unknown OS")
+  }
+}
+
 ##from :  https://github.com/mikelove/DESeq2/blob/master/R/core.R
 estimateSizeFactorsForMatrix <- function(counts, locfunc=stats::median,
                                          geoMeans, controlGenes) {

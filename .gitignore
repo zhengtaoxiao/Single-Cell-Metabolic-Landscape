@@ -3,12 +3,17 @@
 2-Imputation/dataset/*
 3-Normalization/dataset/*
 4-Clustering/dataset/*
-5-PathwayActivaty/dataset/*
-5-PathwayActivaty/TCGA/*
+5-PathwayActivity/dataset/*
+5-PathwayActivity/TCGA/*
 6-PathwayHeterogenity/dataset/*
 7-MetabolicPhenotype/dataset/*
 
+5-PathwayActivaty/scRNA_pathway_activity_nonmetabolic.R
+5-PathwayActivaty/run.sh
+5-PathwayActivaty/correlation_scRNA_TCGA.R
+
+.DS_Store
+.Rhistory
 Data/TCGA/HNSC/exp.txt
 Data/TCGA/HNSC/type.txt
-
 pipeline.ai

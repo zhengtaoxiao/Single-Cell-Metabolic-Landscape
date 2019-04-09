@@ -1,9 +1,9 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ###### download melanoma dataset #####
 
-url='http://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72056/suppl/GSE72056_melanoma_single_cell_revised_v2.txt.gz'
-wget $url
+url='ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72056/suppl/GSE72056_melanoma_single_cell_revised_v2.txt.gz'
+wget $url || curl $url -o GSE72056_melanoma_single_cell_revised_v2.txt.gz
 gunzip GSE72056_melanoma_single_cell_revised_v2.txt.gz
 
 #rename corrupt gene symbols due to incorrect conversion by Excel
@@ -24,7 +24,7 @@ rm GSE72056_melanoma_single_cell_revised_v2.txt.gz
 
 ###### download head and neck dataset #####
 url="ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE103nnn/GSE103322/suppl/GSE103322_HNSCC_all_data.txt.gz"
-wget $url
+wget $url || curl $url -o GSE103322_HNSCC_all_data.txt.gz
 gunzip GSE103322_HNSCC_all_data.txt.gz
 
 

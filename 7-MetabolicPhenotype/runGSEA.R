@@ -28,9 +28,15 @@ runGSEA<-function(expr_data,covariate,test,control,base.name,gmt.file,outdir){
    close(con)         
    
    #call java gsea version 
-   system(paste('java -Xmx512m -cp ../gsea-3.0.jar xtools.gsea.Gsea -res expr.txt -cls pheno.cls#',test,'_versus_',control,' -gmx ',gmt.file,
+   command <- paste('java -Xmx512m -cp ../gsea-3.0.jar xtools.gsea.Gsea -res expr.txt -cls pheno.cls#',test,'_versus_',control,' -gmx ',gmt.file,
                 ' -collapse false -nperm 1000 -permute gene_set -rnd_type no_balance -scoring_scheme weighted -rpt_label ',testname, 
                 ' -metric Diff_of_Classes -sort real -order descending -include_only_symbols false -make_sets true -median false -num 100',
-                ' -plot_top_x 20 -rnd_seed 123456 -save_rnd_lists false -set_max 10000 -set_min 5 -zip_report false -out ', outdir, ' -gui false',sep=''),show.output.on.console=T)
+                ' -plot_top_x 20 -rnd_seed 123456 -save_rnd_lists false -set_max 10000 -set_min 5 -zip_report false -out ', outdir, ' -gui false',sep='')
+   if(get_os() == "win"){
+      system(command,show.output.on.console=F)
+   }else{
+      system(command)
+   }
+   
    unlink(c('pheno.cls','expr.txt'))
 }

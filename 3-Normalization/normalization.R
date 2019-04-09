@@ -80,7 +80,7 @@ saveRDS(selected_impute_tpm_norm,file.path(outDir,"TMM_tpm.rds"))
 scran.sf <- scran::computeSumFactors(selected_impute_counts[low_dropout_genes,],clusters=selected_impute_sce$cellType)
 summary(scran.sf)
 selected_impute_tpm_norm <- t(t(selected_impute_tpm) / scran.sf)
-selected_impute_exp_norm <- log2(selected_impute_tpm_norm/10+1)
+selected_impute_exp_norm <- log2(selected_impute_tpm_norm+1)
 #save
 saveRDS(selected_impute_tpm_norm,file.path(outDir,"Deconvolution_tpm.rds"))
 

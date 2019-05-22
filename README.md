@@ -56,7 +56,7 @@ Rscript inter_tumor_distance.R melanoma
 Rscript inter_tumor_distance.R head_neck
 cd ../
 ```
-The t-SNE algorithm will be performed in this step for visualizing metabolic gene expression in millions of cells. The spearman correlation matrix will aslo be generated to show the inter-tumor heterogeneity using metabolic genes.
+The t-SNE algorithm will be performed in this step for visualizing metabolic gene expression in millions of cells (The result may be slightly different with the figure in manuscript due to the random initialization). The spearman correlation matrix will aslo be generated to show the inter-tumor heterogeneity using metabolic genes.
 
 Metabolic pathway activity
 --------------------------

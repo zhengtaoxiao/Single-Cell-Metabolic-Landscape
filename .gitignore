@@ -5,12 +5,13 @@
 4-Clustering/dataset/*
 5-PathwayActivity/dataset/*
 5-PathwayActivity/TCGA/*
-6-PathwayHeterogenity/dataset/*
-7-MetabolicPhenotype/dataset/*
+6-PathwayHeterogeneity/dataset/*
+7-MetabolicFeatures/dataset/*
 
-5-PathwayActivaty/scRNA_pathway_activity_nonmetabolic.R
-5-PathwayActivaty/run.sh
-5-PathwayActivaty/correlation_scRNA_TCGA.R
+2-Imputation/_*
+5-PathwayActivity/_*
+6-PathwayHeterogeneity/_*
+
 
 .DS_Store
 .Rhistory

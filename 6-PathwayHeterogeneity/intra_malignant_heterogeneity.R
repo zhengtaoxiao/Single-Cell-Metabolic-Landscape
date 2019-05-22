@@ -2,9 +2,14 @@ library(scater)
 library(stringr)
 library(pheatmap)
 library(gtools)
+library(scran)
 source("../utils.R")
 options(stringsAsFactors=FALSE)
 source("runGSEA_preRank.R")
+
+###update:: using scran to quantify the technical component of the variance
+
+
 
 args <- commandArgs()
 tumor <- args[6]
